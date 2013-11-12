@@ -1,0 +1,84 @@
+/* CSS Document */
+body {
+	padding: 0;
+	margin: 0px;
+	font: 18px arial;}
+
+a {
+	text-decoration: none;
+	color:Gray}
+	
+p {
+	width: 100%;
+	float:left;
+	text-align:center;}
+	
+h1 {
+	font-size: 36px;
+	text-align:center;
+	font-weight:normal;
+	padding:0;
+	margin:10px 0 0 0;}
+	
+#container {   
+	margin: 0 auto; 
+    width: 680px;
+	position:relative;}
+
+#status {
+	width: 100%;
+	text-align:center;
+	margin: 15px 0 10px 0;}
+	
+	#status .red {
+		color: Red;}
+		
+#board {		
+	border: 5px solid #274C81;
+	float:left;}
+
+.column {
+	float:left;}
+	
+	.column div {
+	display:block;
+	width: 95px;
+	height: 85px;
+	background: url(../images/empty.jpg) no-repeat top left}
+	
+	.column div.redBox {
+		background-color: Red;}
+		
+	.column div.blackBox {
+		background-color: black;}
+		
+	.column div.black {
+		background: url(../images/black.jpg) no-repeat top left}
+		
+	.column div.red {
+		background: url(../images/red.jpg) no-repeat top left}
+	
+#winningModal {
+	border: 5px solid silver;
+	width: 300px;
+	position:absolute;
+	top:100px;
+	left:165px;
+	color:#fff;
+	text-align:center;
+	padding: 35px 20px;
+	border-radius: 20px;
+	font-size:30px;
+	display:none;}
+	
+	#winningModal a {
+		font-size: 18px;
+		display:block;
+		float:left;
+		color: black;
+		background-color:silver;
+		padding: 5px;
+		margin: 30px 16px 0px 16px;
+		width: 100px;
+		border: 3px solid #fff;
+		border-radius: 10px;}
