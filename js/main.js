@@ -1,10 +1,13 @@
 $(document).ready(function () {
 	var gameOver = false;
+	var winningModal = $('#winningModal');
+	var div = $(".column div");
+	
     $(".black").hide();
 	
 
 	//makes sure you can only click on clickable cirlces, gives cirlces right color
-    $(".column div").click(function () {
+    div.click(function () {
 		var currentBox = $(this);
         if (!currentBox.hasClass("clicked")) {
             if (currentBox.is(':last-child') || currentBox.next("div").hasClass("clicked")) {
@@ -134,7 +137,7 @@ $(document).ready(function () {
 	
 	//restarts game
     $(".clearBoard").click(function () {
-        $(".column div").each(function () {
+        div.each(function () {
             $(this).attr("class", "");
         });
 		gameOver = false;
@@ -145,13 +148,14 @@ $(document).ready(function () {
 	//shows modal when game is won
 	function gameWon (winningColor) {
 		gameOver = true;
-		$('#winningModal').fadeIn().css('background-color', winningColor).text(winningColor);
+		winningModal.fadeIn().css('background-color', winningColor);
+		$('#winningColor').text(winningColor);
 	}
 	
 	
 	//closes winning game modal
-	$(".closeModal").click(function () {
-        $('#winningModal').fadeOut();
+	$(".closeModal, .clearBoard").click(function () {
+        winningModal.fadeOut();
     });
 
 
