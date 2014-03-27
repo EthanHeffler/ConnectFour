@@ -3,23 +3,20 @@ $(document).ready(function () {
     $(".black").hide();
 	
 
-
 	//makes sure you can only click on clickable cirlces, gives cirlces right color
     $(".column div").click(function () {
-        if (!$(this).hasClass("clicked")) {
-            if ($(this).is(':last-child') || $(this).next("div").hasClass("clicked")) {
+		var currentBox = $(this);
+        if (!currentBox.hasClass("clicked")) {
+            if (currentBox.is(':last-child') || currentBox.next("div").hasClass("clicked")) {
 				if (gameOver == false) {
 					if ($('#status span.red').is(':visible')) {
-						$(this).addClass("clicked");
-						$(this).addClass("red");
+						currentBox.addClass("clicked");
+						currentBox.addClass("red");
 					} else {
-						$(this).addClass("clicked");
-						$(this).addClass("black");
+						currentBox.addClass("clicked");
+						currentBox.addClass("black");
 					}
-					var currentBox = $(this);
-	
 					$("#status span").toggle();
-					
 					checkBoard(currentBox);
 				}
             }
@@ -145,22 +142,17 @@ $(document).ready(function () {
     });
 	
 	
-	
 	//shows modal when game is won
 	function gameWon (winningColor) {
 		gameOver = true;
-		$('#winningModal').fadeIn();
-		$('#winningModal').css('background-color', winningColor);
-		$('#winningColor').text(winningColor);
+		$('#winningModal').fadeIn().css('background-color', winningColor).text(winningColor);
 	}
-	
 	
 	
 	//closes winning game modal
 	$(".closeModal").click(function () {
         $('#winningModal').fadeOut();
     });
-
 
 
     //end document ready

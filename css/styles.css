@@ -1,8 +1,14 @@
-/* CSS Document */
+
 body {
 	padding: 0;
 	margin: 0px;
 	font: 18px arial;}
+	
+/* Preloading Images */
+body:after {
+  content: url("../images/black.jpg") url("../images/red.jpg");
+  display: none;
+}
 
 a {
 	text-decoration: none;
